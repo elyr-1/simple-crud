@@ -1,0 +1,24 @@
+
+ng new simple-crud
+
+ng g m user
+ng g m book
+ng g m blog
+
+ng g c user/pages/profile
+ng g i user/models/user-interface
+ng g c user/components/form
+
+ng g c book/pages/book-list
+ng g i book/models/book-interface
+ng g c book/components/book-item
+
+ng g c blog/pages/blog-list
+ng g i blog/models/blog-interface
+ng g c blog/components/blog-item
+
+ng g s core/services/auth
+ng g g core/guards/auth
+ng g interceptor core/interceptor/header
+
+ng serve
