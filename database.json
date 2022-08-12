@@ -1,0 +1,45 @@
+{ "books":  [
+    {
+      "id": 1001,
+      "name": "The Alchemist",
+      "authors": ["Paulo Coelho"],
+      "isbn": "0003281752"
+    },
+    {
+      "id": 1002,
+      "name": "Forrest Gump",
+      "authors": ["Winston Groom"],
+      "isbn": "0552996092"
+    },
+    {
+      "id": 1003,
+      "name": "Divergent",
+      "authors": ["Veronica Roth"],
+      "isbn": "0063040514"
+    },
+    {
+      "id": 1004,
+      "name": "Insurgent",
+      "authors": ["Veronica Roth"],
+      "isbn": "0008468958"
+    },
+    {
+      "id": 1005,
+      "name": "Harry Potter and the Sorcerer's Stone",
+      "authors": ["J.K. Rowling"],
+      "isbn": "0747532745"
+    },
+    {
+      "id": 1006,
+      "name": "Harry Potter and the Chamber of Secrets",
+      "authors": ["J.K. Rowling"],
+      "isbn": "0747538484"
+    },
+    {
+      "id": 1007,
+      "name": "Harry Potter and the Deathly Hallows",
+      "authors": ["J.K. Rowling"],
+      "isbn": "0545139708"
+    }
+]
+}
