@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../../models/book-interface';
 import { BookServicesService } from '../../services/book-services.service';
 
+
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',

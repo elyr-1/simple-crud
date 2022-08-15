@@ -1,6 +1,11 @@
 
 <body>
+
     <div class="container">
+
+        <!--COMMAND BAR-->
+        <app-command-bar></app-command-bar>
+
         <div *ngFor="let data of blogs; let i = index">
 
             <!--DISPLAY FEATURED ITEM IN JUMBOTRON-->
@@ -12,7 +17,6 @@
                     <button type="button" class="btn btn-danger">Delete</button>
                 </div>
                 </div>
-
             </div>
     
             <!--DISPLAY OTHER ITEMS IN CARDS-->
