@@ -3,14 +3,14 @@
     <a href="#" target="_blank">{{ book?.name }}</a>
 </div>
     <div class="card-body">
-        <h4 class="card-text">ID : {{ book?.id }}</h4>
-        <h4 class="card-text">Author(s) : {{ book?.authors }}</h4>
-        <h4 class="card-text">ISBN : {{ book?.isbn }}</h4>
+        <h6 class="card-text">ID : {{ book?.id }}</h6>
+        <h6 class="card-text">Author(s) : {{ book?.authors }}</h6>
+        <h6 class="card-text">ISBN : {{ book?.isbn }}</h6>
     </div>
 
 <div class="card-footer">
     <div class="btn-group btn-block" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-secondary" (click)="sendAction()">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="sendAction()">Delete</button>
     </div>
 </div>

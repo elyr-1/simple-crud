@@ -1,7 +1,11 @@
-
-<div>
-    <h1 class="display-4 font-italic"><b>{{ blog?.title }}</b></h1>
-    <p class="lead my-3">{{ blog?.description }} <br><i>by {{ blog?.author }}</i></p>
-    <p class="lead my-3">{{ blog?.comments }}</p>
-    <p class="lead mb-0"><a href="#" target="_blank" class="text-white font-weight-bold">Continue reading...</a></p>
+<div class="card text-white bg-dark">
+<div class="card-header"><h4 style="font-family: Georgia"><b>{{ blog?.title }}</b></h4></div>
+  <div class="card-body">
+    <h5 class="card-title">{{ blog?.description }} <br><i>by {{ blog?.author }}</i></h5>
+    <p class="card-text">{{ blog?.comments }}</p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" id="edit" (click)="sendAction()">Edit</button>
+        <button type="button" class="btn btn-danger" id="delete" (click)="sendAction()">Delete</button>
+    </div>
+</div>
 </div>

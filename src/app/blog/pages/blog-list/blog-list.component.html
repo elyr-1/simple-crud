@@ -1,53 +1,12 @@
+<div class="container">
+  <!--COMMAND BAR-->
+  <app-command-bar></app-command-bar>
 
-<body>
-
-    <div class="container">
-
-        <!--COMMAND BAR-->
-        <app-command-bar></app-command-bar>
-
-        <div *ngFor="let data of blogs; let i = index">
-
-            <!--DISPLAY FEATURED ITEM IN JUMBOTRON-->
-            <div *ngIf="data.featured">    
-                <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" >
-                    <app-blog-item  [blog]="data" class="app-blog"></app-blog-item>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
-                </div>
-            </div>
-    
-            <!--DISPLAY OTHER ITEMS IN CARDS-->
-            <div *ngIf="data.featured == false">
-
-                <div class="card mb-3" style="max-width: 100%">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/dark-gray-paper-background-texture_M1y3vwqd_thumb.jpg" class="card-img" alt="...">
-                        <div class="card-img-overlay d-flex">
-                            <a class="align-self-center mx-auto text-white">Thumbnail</a>
-                        </div>
-                        <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-
-                        <div class="card-body">
-                            <app-blog-item [blog]="data" class="app-blog"></app-blog-item>
-                        </div>
-
-                      </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    
-</body>
-
-
+  <div *ngFor="let data of blogs; let i = index">
+    <app-blog-item [blog]="data" class="app-blog" (actionEmitter)="executeAction($event)"></app-blog-item>
+    <br />
+  </div>
+  
+  <br />
+  <br />
+</div>

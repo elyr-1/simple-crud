@@ -36,9 +36,6 @@ export class BlogServicesService {
     return this.blogs;
   }
 
-  delete(id: number) {
-    this.blogs = this.blogs.filter((d) => d.id !== id)
-  } 
 
   constructor() { }
 }

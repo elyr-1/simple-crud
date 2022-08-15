@@ -15,7 +15,10 @@ export class BlogListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
 
+  executeAction(blogs: Blog) {
+    console.log(blogs.id)
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Blog } from '../../models/blog-interface';
 
 @Component({
@@ -8,10 +8,15 @@ import { Blog } from '../../models/blog-interface';
 })
 export class BlogItemComponent implements OnInit {
   @Input() blog: Blog | undefined
+  @Output() actionEmitter = new EventEmitter<Blog>();
   
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sendAction() {
+    this.actionEmitter.emit(this.blog)
   }
 
 }

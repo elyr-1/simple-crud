@@ -18,4 +18,8 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  executeAction(books: Book) {
+    console.log(books.id)
+  }
+
 }
