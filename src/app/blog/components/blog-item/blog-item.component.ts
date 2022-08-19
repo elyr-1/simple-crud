@@ -15,8 +15,8 @@ export class BlogItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendAction() {
-    this.actionEmitter.emit(this.blog)
+  deleteBlog(id: any) {
+    this.actionEmitter.emit(id);
   }
 
 }

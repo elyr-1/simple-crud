@@ -13,7 +13,6 @@ export class BookListComponent implements OnInit {
   sb: Subscription | undefined
 
   constructor(private booksrv: BookServicesService) { 
-
     this.sb = this.booksrv.getBooks().subscribe(data => {this.books = data})
   }
 

@@ -1,45 +1,50 @@
 <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px">
-            <div class="card-body p-5">
-              <h2 class="text-center mb-5" style="font-family: Georgia"><b>Blog Form</b></h2>
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px">
+          <div class="card-body p-5 text-white bg-dark" style="border-radius: 15px">
+            <h2 class="text-center mb-5" style="font-family: Georgia"><b>Blog Form</b></h2>
   
-              <form [formGroup]="blogFormGroup" (ngSubmit)="submit()">
-                <div class="form-outline mb-4">
-                  <label for="id">ID</label>
+            <form [formGroup]="blogFormGroup" (ngSubmit)="submit()">
+              <div class="input-group mb-3">
+                <span class="input-group-text">Blog ID</span>
                   <input formControlName="id" type="number" class="form-control" id="id" placeholder="ID"/>
                 </div>
-                <div class="form-outline mb-4">
-                  <label for="title">Title</label>
+                <div class="input-group mb-3">
+                <span class="input-group-text">Blog Title</span>
                   <input formControlName="title" type="text" class="form-control" id="title" placeholder="Title"/>
                 </div>
-                <div class="form-outline mb-4">
-                  <label for="description">Description</label>
-                  <input formControlName="description" type="text" class="form-control" id="description" placeholder="Description"/>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Description</span>
+                  <textarea formControlName="description" type="text" class="form-control" id="description" placeholder="Description"></textarea>
                 </div>
-                <div class="form-outline mb-4">
-                  <label for="author">Author</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Author</span>
                   <input formControlName="author" type="text" class="form-control" id="author"
                     placeholder="Author"/>
                 </div>
-                <div class="form-outline mb-4" formArrayName="comments">
-                  <label for="comments">Comment(s)</label>
-                  <a class="link-primary" type="link">
-                    <i class="bi bi-person-plus-fill"></i></a>
+                <div class="input-group mb-3" formArrayName="comments"> 
+                  <button class="btn btn-link" (click)="addComment()">Add Comment</button>
                     <div class="input-group"
                     *ngFor="let _ of commentFormArray.controls; index as i">
+                    <span class="input-group-text">Comment</span>
                   <textarea [formControlName]="i" type="text" class="form-control" id="comments"
-                    placeholder="Comment(s)"></textarea>
+                    placeholder="Comment"></textarea>
                 </div>
                 </div>
 
-                <button type="submit" class="btn btn-success">Submit</button>
+                <div class="card-footer text-center">
+                  <div class="btn-group btn-block" role="group">
+                    <button type="submit" class="btn btn-success text-center">Submit</button>
+                    <button type="submit" class="btn btn-secondary text-center" [routerLink]="['/blog']">Back</button>
+                  </div>
+                </div>
+                
               </form>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

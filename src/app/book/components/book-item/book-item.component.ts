@@ -15,8 +15,13 @@ export class BookItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendAction() {
-    this.actionEmitter.emit(this.book)
+  deleteBook = (bookId: any) => {
+    console.log(bookId);
+    this.actionEmitter.emit(bookId);
+  }
+
+  editBook = (id: any) => {
+    console.log(id)
   }
 
 }

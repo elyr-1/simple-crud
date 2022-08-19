@@ -3,26 +3,25 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-9 col-lg-7 col-xl-6">
         <div class="card" style="border-radius: 15px">
-          <div class="card-body p-5">
+          <div class="card-body p-5 text-white bg-dark" style="border-radius: 15px">
             <h2 class="text-center mb-5" style="font-family: Georgia"><b>Book Form</b></h2>
 
             <form [formGroup]="bookFormGroup" (ngSubmit)="submit()">
-              <div class="form-outline mb-4">
-                <label for="id">ID</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Book ID</span>
                 <input formControlName="id" type="number" class="form-control" id="id"
-                  placeholder="ID"/>
+                  placeholder="ID" />
               </div>
-              <div class="form-outline mb-4">
-                <label for="name">Name</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Book Title</span>
                 <input formControlName="name" type="text" class="form-control" id="name"
                   placeholder="Name"/>
               </div>
 
-              <div class="form-outline mb-4" formArrayName="authors">
-                <label for="authors">Author(s)</label>
-                <a class="link-primary" type="link" (click)="addAuthor()">
-                <i class="bi bi-person-plus-fill"></i></a>
+              <div class="input-group mb-3" formArrayName="authors">
+                <button class="btn btn-link" (click)="addAuthor()">Add Author</button>
                 <div class="input-group" *ngFor="let _ of authorFormArray.controls; index as i">
+                  <span class="input-group-text">Author</span>
                   <input [formControlName]="i" type="text" class="form-control"
                     placeholder="Author"/>
                   <div class="input-group-append">
@@ -34,14 +33,19 @@
                 </div>
               </div>
 
-              <div class="form-outline mb-4">
-                <label for="isbn">ISBN</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text">ISBN</span>
                 <input formControlName="isbn" type="text" class="form-control" id="isbn"
                   placeholder="ISBN"/>
               </div>
-              <button type="submit" class="btn btn-success btn-block gradient-custom-4 text-center">
-                Submit
-              </button>
+
+              <div class="card-footer text-center">
+                <div class="btn-group btn-block" role="group">
+                  <button type="submit" class="btn btn-success text-center">Submit</button>
+                  <button type="submit" class="btn btn-secondary text-center" [routerLink]="['/book']">Back</button>
+                </div>
+              </div>
+
             </form>
           </div>
         </div>
