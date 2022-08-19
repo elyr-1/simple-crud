@@ -8,9 +8,9 @@
         <h6 class="card-text">ISBN : {{ book?.isbn }}</h6>
     </div>
 
-<div class="card-footer">
+<div class="card-footer text-center">
     <div class="btn-group btn-block" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary" (click)="sendAction()">Edit</button>
+        <button type="button" class="btn btn-secondary" [routerLink]="['form']" (click)="sendAction()">Edit</button>
         <button type="button" class="btn btn-danger" (click)="sendAction()">Delete</button>
     </div>
 </div>

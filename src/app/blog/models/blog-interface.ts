@@ -4,5 +4,4 @@ export interface Blog {
     description: string;
     author: string;
     comments?: string[];
-    featured?: boolean;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Blog } from '../../models/blog-interface';
 import { BlogServicesService } from '../../services/blog-services.service';
 
@@ -9,9 +10,11 @@ import { BlogServicesService } from '../../services/blog-services.service';
 })
 export class BlogListComponent implements OnInit {
   blogs: Blog[] = []
+  sb: Subscription | undefined
 
-  constructor() { 
-    this.blogs = new BlogServicesService().getBlogs();
+  constructor(private blogsrv: BlogServicesService) { 
+    //this.blogs = new BlogServicesService().getBlogs();
+    this.sb = this.blogsrv.getBlogs().subscribe(data => {this.blogs = data})
   }
 
   ngOnInit(): void {

@@ -1,0 +1,51 @@
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px">
+          <div class="card-body p-5">
+            <h2 class="text-center mb-5" style="font-family: Georgia"><b>Book Form</b></h2>
+
+            <form [formGroup]="bookFormGroup" (ngSubmit)="submit()">
+              <div class="form-outline mb-4">
+                <label for="id">ID</label>
+                <input formControlName="id" type="number" class="form-control" id="id"
+                  placeholder="ID"/>
+              </div>
+              <div class="form-outline mb-4">
+                <label for="name">Name</label>
+                <input formControlName="name" type="text" class="form-control" id="name"
+                  placeholder="Name"/>
+              </div>
+
+              <div class="form-outline mb-4" formArrayName="authors">
+                <label for="authors">Author(s)</label>
+                <a class="link-primary" type="link" (click)="addAuthor()">
+                <i class="bi bi-person-plus-fill"></i></a>
+                <div class="input-group" *ngFor="let _ of authorFormArray.controls; index as i">
+                  <input [formControlName]="i" type="text" class="form-control"
+                    placeholder="Author"/>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-danger" type="button"
+                      (click)="removeAuthor(i)">
+                      <i class="bi bi-person-dash-fill"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label for="isbn">ISBN</label>
+                <input formControlName="isbn" type="text" class="form-control" id="isbn"
+                  placeholder="ISBN"/>
+              </div>
+              <button type="submit" class="btn btn-success btn-block gradient-custom-4 text-center">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

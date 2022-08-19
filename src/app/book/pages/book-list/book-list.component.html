@@ -3,17 +3,12 @@
   <app-command-bar></app-command-bar>
 
   <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap">
-    <!--DISPLAY EACH INSTANCE AS CARDS-->
-    <div
-      class="card text-white bg-dark mb-3 h-100"
-      style="max-width: 19rem"
-      *ngFor="let data of books; let i = index"
-    >
-      <app-book-item
-        [book]="data"
-        class="app-book"
-        (actionEmitter)="executeAction($event)"
-      ></app-book-item>
+    <!--DISPLAY EACH INSTANCE-->
+    <div class="card text-white bg-dark mb-3 h-100" style="max-width: 19rem"
+      *ngFor="let data of books; let i = index">
+      <app-book-item [book]="data" class="app-book"
+        (actionEmitter)="executeAction($event)">
+      </app-book-item>
     </div>
   </div>
 </div>

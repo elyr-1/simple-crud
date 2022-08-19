@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Book } from '../../models/book-interface';
 import { BookServicesService } from '../../services/book-services.service';
-
 
 @Component({
   selector: 'app-book-list',
@@ -10,12 +10,14 @@ import { BookServicesService } from '../../services/book-services.service';
 })
 export class BookListComponent implements OnInit {
   books: Book[] = []
+  sb: Subscription | undefined
 
-  constructor() { 
-    this.books = new BookServicesService().getBooks();
+  constructor(private booksrv: BookServicesService) { 
+
+    this.sb = this.booksrv.getBooks().subscribe(data => {this.books = data})
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
   executeAction(books: Book) {
