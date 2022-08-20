@@ -30,19 +30,19 @@ export class BookFormComponent implements OnInit {
 
     this.bookId = this.route.snapshot.paramMap.get('id');
 
-    switch(this.bookId) {
+    switch (this.bookId) {
+      //display a blank form when add button is triggered
       case 'false':
         this.books = [{id: 0, name: '', authors: [''], isbn: ''}]
         break;
-      case 'true':
+      //display the details of a specific books
+      case this.bookId:
         this.sub = booksrv.getBookId(parseInt(this.bookId)).subscribe(book => {
-          this.bookFormGroup.patchValue(book[0]);
-          for(let data of book[0].authors) {
-            this.authorFormArray.push(new FormControl(data))
-          }
+          this.bookFormGroup.patchValue(book[0])
         })
         break;
     }
+
   }
 
   ngOnInit(): void {

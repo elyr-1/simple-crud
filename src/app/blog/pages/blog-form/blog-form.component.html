@@ -26,12 +26,12 @@
                 </div>
                 <div class="input-group mb-3" formArrayName="comments"> 
                   <button class="btn btn-link" (click)="addComment()">Add Comment</button>
-                    <div class="input-group"
-                    *ngFor="let _ of commentFormArray.controls; index as i">
+                  <div class="input-group" *ngFor="let _ of commentFormArray.controls; index as i">
                     <span class="input-group-text">Comment</span>
-                  <textarea [formControlName]="i" type="text" class="form-control" id="comments"
-                    placeholder="Comment"></textarea>
-                </div>
+                    <textarea [formControlName]="i" type="text" class="form-control" id="comments"
+                      placeholder="Comment" rows="4" style="border-top-right-radius:5px; border-bottom-right-radius:5px"></textarea>
+                    <button class="btn btn-link float-end" (click)="removeComment(i)"><i class="bi bi-trash-fill"></i></button>
+                  </div>
                 </div>
 
                 <div class="card-footer text-center">

@@ -28,6 +28,21 @@ export class BlogFormComponent implements OnInit {
       ])
     });
     this.commentFormArray = this.blogFormGroup.get('comments') as FormArray
+
+    this.blogId = this.route.snapshot.paramMap.get('id');
+
+    switch (this.blogId) {
+      //display a blank form when add button is triggered
+      case 'false':
+        this.blogs = [{id: 0, title: '',description: '', author: '', comments: ['']}]
+        break;
+      //display the details of a specific blog
+      case this.blogId:
+        this.sub = blogsrv.getBlogId(parseInt(this.blogId)).subscribe(blog => {
+          this.blogFormGroup.patchValue(blog[0])
+        })
+        break;
+    }
   }
 
   ngOnInit(): void {
@@ -44,6 +59,10 @@ export class BlogFormComponent implements OnInit {
 
   addComment() {
     this.commentFormArray.push(new FormControl(''));
+  }
+
+  removeComment(i: number) {
+    this.commentFormArray.removeAt(i);
   }
 
 }
