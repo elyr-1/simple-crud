@@ -1,6 +1,6 @@
 export interface User {
-    email: string;
     name: string;
+    email: string;
     bio: string;
-    active: boolean;
+    active: string;
 }
