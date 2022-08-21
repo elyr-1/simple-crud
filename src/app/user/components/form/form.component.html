@@ -15,7 +15,7 @@
       </div>
 
       <div class="col-lg-8">
-        <form>
+        <form [formGroup]="profileFormGroup" (ngSubmit)="submit()">
             <div class="card mb-4 text-white bg-dark">
                 <div class="card-body ">
 
@@ -24,7 +24,7 @@
                             <p class="mb-0">Full Name</p>
                         </div>
                         <div class="col-sm-9">
-                            <input formControlName="id" type="number" class="form-control" id="id" placeholder="ID"/>
+                            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Name"/>
                         </div>
                     </div>
                     <hr>
@@ -34,7 +34,7 @@
                             <p class="mb-0">Email</p>
                         </div>
                         <div class="col-sm-9">
-                            <input formControlName="id" type="number" class="form-control" id="id" placeholder="ID"/>
+                            <input formControlName="email" type="text" class="form-control" id="email" placeholder="username@domain.com"/>
                         </div>
                     </div>
                     <hr>
@@ -44,7 +44,7 @@
                             <p class="mb-0">Bio</p>
                         </div>
                         <div class="col-sm-9">
-                            <textarea formControlName="id" type="number" class="form-control" id="id" placeholder="ID"></textarea>
+                            <textarea formControlName="bio" type="text" class="form-control" id="text" placeholder="Tell me something about yourself"></textarea>
                         </div>
                     </div>
                     <hr>
@@ -54,7 +54,13 @@
                             <p class="mb-0">Status</p>
                         </div>
                         <div class="col-sm-9">
-                            <input formControlName="id" type="number" class="form-control" id="id" placeholder="ID"/>
+                            <!--<input formControlName="id" type="number" class="form-control" id="id" placeholder="ID"/>-->
+                            <select class="form-select" id="active" formControlName="active">
+                              <option value="" disabled selected>Choose...</option>
+                              <option value="Active">Active</option>
+                              <option value="Away">Away</option>
+                              <option value="Do Not Disturb">Do Not Disturb</option>
+                            </select>
                         </div>
                     </div>
                     <hr>
